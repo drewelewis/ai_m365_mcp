@@ -1,16 +1,70 @@
+# Microsoft 365 MCP Integration
 
+A Python-based MCP (Model Context Protocol) client for interacting with Microsoft's M365 MCP servers. This repository demonstrates how to leverage Microsoft's Teams MCP server to programmatically manage Microsoft Teams resources through a standardized protocol interface.
 
-## Microsoft Teams MCP Server
+## Purpose
 
-This repository contains a Model Context Protocol (MCP) server for interacting with Microsoft Teams via the Microsoft Graph API.
+This repository serves as a **learning and testing environment** for developers who want to:
 
-### Features
+1. **Understand MCP Architecture**: Learn how to build MCP clients that connect to Microsoft's hosted MCP servers
+2. **Explore M365 Integration**: Discover the capabilities of Microsoft's Teams MCP server without building from scratch
+3. **Prototype Teams Automation**: Quickly test and validate Teams automation scenarios using MCP tools
+4. **Bridge AI and Teams**: Create AI-powered applications that can interact with Microsoft Teams through a standardized protocol
+
+### What is MCP?
+
+The [Model Context Protocol (MCP)](https://modelcontextprotocol.io) is an open standard that enables AI applications to securely connect to data sources and tools. Microsoft has implemented MCP servers for their M365 services, allowing developers to interact with Teams, Outlook, and other M365 services through a consistent protocol.
+
+**Key benefits of using MCP:**
+- **Standardized Interface**: Consistent way to interact with different services
+- **AI-Ready**: Designed for integration with AI assistants and agents
+- **Tool Discovery**: Automatically discover available operations and their schemas
+- **Security**: Built-in authentication and authorization patterns
+
+## What This Repository Does
+
+This is a **MCP client application** (not a server) that:
+- ✅ Connects to Microsoft's hosted Teams MCP server
+- ✅ Authenticates using Microsoft Graph API tokens
+- ✅ Provides test scripts to explore available MCP tools
+- ✅ Demonstrates real-world usage patterns for Teams automation
+- ✅ Includes helper utilities for token management and setup verification
+
+**What it does NOT do:**
+- ❌ Implement a custom MCP server
+- ❌ Replace the Microsoft Graph API (it uses Graph API for auth)
+- ❌ Require you to host any infrastructure
+
+### What You Can Do
 
 - **Chat Management**: Create, read, update, and delete Teams chats
 - **Message Operations**: Send, retrieve, edit, and delete messages
 - **Channel Management**: Create and manage Teams channels
 - **Team Operations**: List and retrieve team information
 - **Member Management**: Add and manage team/channel members
+
+## Repository Structure
+
+```
+ai_m365_mcp/
+├── test_teams_mcp.py          # Main test script for Teams MCP tools
+├── get_token.py               # Helper to obtain Microsoft Graph tokens
+├── verify_setup.py            # Setup verification script
+├── requirements.txt           # Python dependencies
+├── .env                       # Environment configuration (not committed)
+├── setup_teams_mcp.bat        # Windows setup automation
+└── README.md                  # This file
+```
+
+## Use Cases
+
+This MCP client is ideal for:
+
+- **AI Agent Development**: Building AI assistants that need to interact with Microsoft Teams
+- **Workflow Automation**: Creating automated workflows for Teams management
+- **Integration Testing**: Validating integration patterns before production deployment
+- **Learning MCP**: Understanding how to work with MCP protocol and Microsoft's implementation
+- **Rapid Prototyping**: Quickly testing Teams automation ideas without complex setup
 
 ### Quick Start
 
@@ -47,14 +101,15 @@ This repository contains a Model Context Protocol (MCP) server for interacting w
    ```
    Copy the token and add it to `.env` file: `TEAMS_ACCESS_TOKEN=<your_token>`
 
-4. **Run the server**:
-   ```cmd
-   python main.py
-   ```
-
-5. **Test the server**:
+4. **Test the MCP client**:
    ```cmd
    python test_teams_mcp.py
+   ```
+   This will connect to Microsoft's Teams MCP server and demonstrate available tools.
+
+5. **Verify your setup** (optional):
+   ```cmd
+   python verify_setup.py
    ```
 
 ---
