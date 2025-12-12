@@ -1,0 +1,5 @@
+fastapi
+mcp
+httpx
+python-dotenv
+pydantic-settings
